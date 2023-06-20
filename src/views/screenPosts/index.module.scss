@@ -1,0 +1,25 @@
+.container {
+    position: absolute;
+    top: 20%; /* Posição vertical desejada */
+    right: 8pc; /* Posição à direita */
+    transform: translate(0, -0%); /* Centralizar verticalmente */
+  }
+
+  .image {
+    max-width: 600px;
+    max-height: 600px;
+  }
+  
+  .a {
+    color: #333;
+    text-decoration: none;
+}
+
+.textimg {
+  position: absolute;
+  margin-top: 0;
+  top: 75%; /* Posição vertical desejada */
+  right: 10pc; /* Posição à direita */
+  max-width: 550px;
+  max-height: 550px;
+}

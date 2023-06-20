@@ -1,0 +1,135 @@
+.custom-input {
+  position: relative;
+}
+
+.custom-input input {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.custom-input .input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease-in-out;
+}
+
+.custom-input input:focus + .input-highlight {
+  width: 100%;
+}
+
+
+
+.album-button {
+  position: absolute;
+  top: 15%; 
+  right: 34pc; 
+  max-width: 50px;
+  max-height: 550px;
+  border-radius: 12px;
+  bottom: 0;
+}
+
+.album-input {
+  position: absolute;
+  top: 15%; 
+  right: 48pc; 
+  max-width: 50px;
+  max-height: 550px;
+  border-radius: 5px;
+  bottom: 0;
+  height: 50px;
+}
+
+.album-image {
+  position: absolute;
+  top: 22%; 
+  right: 25pc; 
+  max-width: 500px;
+  max-height: 500px;
+  background-color: #000;
+  border-radius: 10px;
+  bottom: 0;
+}
+
+.album-artist {
+  position: absolute;
+  top: 8%;
+  right: 5pc;
+  max-width: 500px;
+  max-height: 300px;
+  border-radius: 10px;
+  bottom: 0;
+  color: #fff;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(50%);
+  }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+}
+
+.audio-player-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-icon {
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 18px solid white;
+  margin-left: 4px;
+}
+
+.track-controls {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.control-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.control-icon {
+  color: #fff;
+  font-size: 20px;
+}
+
+audio {
+  width: 60%;
+}
+
+

@@ -1,0 +1,31 @@
+.container {
+  float: left;
+  margin-right: -100%;
+  max-width: 413px;
+  position: relative;
+  width: 100%;
+  background-color: black;
+}
+
+.color {
+  color: #dbdbdb;
+}
+
+.carouselContainer {
+  position: fixed;
+  top: 20px;
+  left: 50px;
+  width: 100px;
+}
+
+
+.divnew {
+  text-align: center;
+}
+
+.divButton {
+  margin-top: 8px;
+  text-align: center;
+  position: relative;
+  transition: top 0.2s ease-out;
+}
