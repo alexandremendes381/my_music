@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ScreenCadastro from './views/screenCadastro/index';
 import ScreenMenu from './views/screenMenu';
+import ScreenBiblioteca from './views/screenBiblioteca';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/Cadastro" element={<ScreenCadastro />} />
         <Route path="/Menu" element={<ScreenMenu />} />
+        <Route path="/Bibliotecas" element={<ScreenBiblioteca/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

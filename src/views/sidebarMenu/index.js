@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import styles from './index.module.scss';
 import { useNavigate } from 'react-router-dom';
+import ScreenBiblioteca from '../screenBiblioteca';
 
-function SidebarMenu({ handleButtonClick }) {
+function SidebarMenu({ handleButtonClick, tracks, currentTrackIndex }) {
   const [showDivs, setShowDivs] = useState(false);
+  const [isOpenBiblioteca, setIsBiblioteca] = useState(false);
+
+
+
   const Home = useNavigate();
 
   const handleButtonClickHome = () => {
@@ -11,26 +16,36 @@ function SidebarMenu({ handleButtonClick }) {
   };
   const handleLinkClick = () => {
     setShowDivs(!showDivs);
-    handleButtonClick(); 
+    handleButtonClick();
   };
+  const hendleClickBiblioteca = () => {
+    setIsBiblioteca(true)
+  }
 
   return (
     <div>
-    <div className={styles.sidebar}>
-      <ul className={styles.sidebarmenu}>
-        <li>
-          <a href="#" onClick={handleButtonClickHome}>Início</a>
-        </li>
-        <li>
-          <a href="#" onClick={handleLinkClick}>Buscar</a>
-        </li>
-        <li>
-          <a href="#">Biblioteca</a>
-        </li>
-        <li>
-          <a href="#">Criar playlist</a>
-        </li>
-      </ul>
+      <div className={styles.sidebar}>
+        <ul className={styles.sidebarmenu}>
+          <li>
+            <a href="#" onClick={handleButtonClickHome}>Início</a>
+          </li>
+          <li>
+            <a href="#" onClick={handleLinkClick}>Buscar</a>
+          </li>
+          <li>
+            <a href="#" onClick={hendleClickBiblioteca}>Biblioteca</a>
+          </li>
+          <li>
+            <a href="#">Criar playlist</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ScreenBiblioteca
+          tracks={tracks}
+          currentTrackIndex={currentTrackIndex}
+          isOpenBiblioteca={isOpenBiblioteca}
+          setIsBiblioteca={setIsBiblioteca} />
       </div>
     </div>
   );

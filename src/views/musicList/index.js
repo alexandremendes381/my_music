@@ -11,7 +11,6 @@ const AudioPlayerComponent = () => {
   const [showDivs, setShowDivs] = useState(false);
   const [tracks, setTracks] = useState([]);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
-
   const handleButtonClick = () => {
     setShowDivs(!showDivs);
   };
@@ -64,9 +63,6 @@ const AudioPlayerComponent = () => {
     setIsPlaying(true);
   };
 
-  console.log('img', tracks[currentTrackIndex]?.image);
-  console.log('aqui', tracks[currentTrackIndex]?.src);
-
   return (
     <div>
       TrackList
@@ -105,7 +101,6 @@ const AudioPlayerComponent = () => {
         </button>
       </div>
       <SidebarMenu handleButtonClick={handleButtonClick} tracks={tracks} currentTrackIndex={currentTrackIndex}/>
-      
     </div>
   );
 };
