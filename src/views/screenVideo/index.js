@@ -1,11 +1,18 @@
-import React from 'react'
-import VideoPlayer from '../../utils/VideoComponent'
+import React, { useState } from 'react'
+
 import styles from './index.module.scss'
 import { useNavigate } from 'react-router-dom';
+import ModalVideo from '../modalVideo';
+import VideoPlayer from '../VideoComponent';
 
 function ScreenVideo() {
+  const [isOpenModal, setisOpenModal] = useState(false)
     const Home = useNavigate();
     const Video = useNavigate();
+
+    const onClickModal = () => {
+      setisOpenModal(true);
+    };
 
     const handleButtonClickHome = () => {
       Home('/');
@@ -25,7 +32,7 @@ function ScreenVideo() {
             <a href="#" >Buscar</a>
           </li>
           <li>
-            <a href="#" >Biblioteca</a>
+            <a href="#" onClick={onClickModal}>Biblioteca</a>
           </li>
           <li>
             <a href="#" onClick={handleButtonClickMusic}>Ouvir musicas</a>
@@ -34,6 +41,12 @@ function ScreenVideo() {
       </div>
         </div>
       <VideoPlayer/>
+      <div>
+      <ModalVideo 
+      isOpenModal={isOpenModal}
+      setisOpenModal={setisOpenModal}
+      />
+      </div>
     </div>
   )
 }
