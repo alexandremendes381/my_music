@@ -11,6 +11,7 @@ const AudioPlayerComponent = () => {
   const [showDivs, setShowDivs] = useState(false);
   const [tracks, setTracks] = useState([]);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+
   const handleButtonClick = () => {
     setShowDivs(!showDivs);
   };
@@ -63,6 +64,15 @@ const AudioPlayerComponent = () => {
     setIsPlaying(true);
   };
 
+  const handleTrackClick = (index) => {
+    setCurrentTrackIndex(index);
+    setIsPlaying(true);
+  };
+
+  const handleAudioEnded = () => {
+    handleNext();
+  };
+
   return (
     <div>
       TrackList
@@ -77,8 +87,8 @@ const AudioPlayerComponent = () => {
           </div>
         </>
       )}
-       
-       <h1 className="album-artist" >{tracks[currentTrackIndex]?.artist}</h1>
+
+       <h1 className="album-artist" >{tracks[currentTrackIndex]?.title}</h1>
       <div>
         <img src={tracks[currentTrackIndex]?.image} alt="Album Cover" className="album-image" />
       </div>
@@ -95,12 +105,18 @@ const AudioPlayerComponent = () => {
           controls
           onPlay={handlePlay}
           onPause={handlePause}
+          onEnded={handleAudioEnded} // Adicione esse evento para passar para a próxima música
         />
         <button className="control-button" onClick={handleNext}>
           <span className="control-icon">&gt;</span>
         </button>
       </div>
-      <SidebarMenu handleButtonClick={handleButtonClick} tracks={tracks} currentTrackIndex={currentTrackIndex}/>
+      <SidebarMenu
+        handleButtonClick={handleButtonClick}
+        tracks={tracks}
+        currentTrackIndex={currentTrackIndex}
+        handleTrackClick={handleTrackClick}
+      />
     </div>
   );
 };
