@@ -59,16 +59,16 @@
 
 .album-artist {
   position: absolute;
-  top: 8%;
-  right: 5pc;
+  top: 80%;
+  right: 35pc;
   max-width: 500px;
   max-height: 300px;
   border-radius: 10px;
   bottom: 0;
   color: #fff;
-  padding: 10px;
+  padding: 0px;
   font-size: 18px;
-  text-align: center;
+  text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -114,7 +114,15 @@
   display: flex;
   align-items: center;
   margin: 0 10px;
+  position: relative;
+  z-index: 10; /* Aumente esse valor para que seja maior do que o z-index do sidebar */
 }
+
+.sidebar {
+  /* Estilos do sidebar */
+  z-index: 5; /* Defina um valor menor do que o z-index do .track-controls */
+}
+
 
 .control-button {
   background: none;

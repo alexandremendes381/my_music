@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import ScreenCadastro from './views/screenCadastro/index';
 import ScreenMenu from './views/screenMenu';
 import ScreenBiblioteca from './views/screenBiblioteca';
+import ScreenVideo from './views/screenVideo';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/Cadastro" element={<ScreenCadastro />} />
         <Route path="/Menu" element={<ScreenMenu />} />
         <Route path="/Bibliotecas" element={<ScreenBiblioteca/>} />
+        <Route path="/video" element={<ScreenVideo/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

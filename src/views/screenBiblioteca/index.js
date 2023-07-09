@@ -1,138 +1,34 @@
 import React from 'react';
-import ButtonHome from '../../components/ButtonHome/ButtonHome';
 import ReactModal from 'react-modal';
 import styles from './index.module.scss';
 
-function ScreenBiblioteca({ isOpenBiblioteca, setIsBiblioteca, currentTrackIndex, tracks }) {
+function ScreenBiblioteca({ isOpenBiblioteca, setIsBiblioteca, currentTrackIndex, tracks, handleTrackClick }) {
   return (
-    <div >
-      <ReactModal
-        isOpen={isOpenBiblioteca}
-        overlayClassName={styles.modalOverlay}
-      >
-        <button
-          className={styles.closeModalButton}
-          onClick={() => setIsBiblioteca(false)}
-        >
+    <div>
+      <ReactModal isOpen={isOpenBiblioteca} overlayClassName={styles.modalOverlay} className={styles.sidebarModal}>
+        <button className={styles.closeModalButton} onClick={() => setIsBiblioteca(false)}>
           X
         </button>
-        <div />
-        <div className={styles.container}>
-          <div className={styles.box}>
-            <img src={tracks[currentTrackIndex]?.image} style={{ width: '150px', height: 'auto' }} />
-            <div className={styles.modalActions1}>
-              <ButtonHome style={{ backgroundColor: '#E36C1C', border: '#E36C1C' }}>
-                Adicionar
-              </ButtonHome>
+        <div className={styles.sidebarContent}>
+          {tracks.map((track, index) => (
+            <div key={track.id} className={styles.box}>
+              <img
+                src={track.image}
+                alt="Album Cover"
+                className={styles.albumImage}
+                onClick={() => handleTrackClick(index)}
+              />
+              <div className={styles.modalActions}>
+                <li
+                  onClick={() => handleTrackClick(index)} 
+                  className={index === currentTrackIndex ? styles.active : ''}
+                >
+                  {track.title}
+                </li>
+              </div>
             </div>
-          </div>
-
-          <div className={styles.box}>
-            <img src={tracks[currentTrackIndex]?.image} style={{ width: '150px', height: 'auto' }} />
-            <div className={styles.modalActions1}>
-              <ButtonHome style={{ backgroundColor: '#E36C1C', border: '#E36C1C' }}>
-                Adicionar
-              </ButtonHome>
-            </div>
-          </div>
-
-          <div className={styles.box}>
-            <img src={tracks[currentTrackIndex]?.image} style={{ width: '150px', height: 'auto' }} />
-            <div className={styles.modalActions1}>
-              <ButtonHome style={{ backgroundColor: '#E36C1C', border: '#E36C1C' }}>
-                Adicionar
-              </ButtonHome>
-            </div>
-
-          </div>
-          <div className={styles.box}>
-            <img src={tracks[currentTrackIndex]?.image} style={{ width: '150px', height: 'auto' }} />
-            <div className={styles.modalActions1}>
-              <ButtonHome style={{ backgroundColor: '#E36C1C', border: '#E36C1C' }}>
-                Adicionar
-              </ButtonHome>
-            </div>
-          </div>
-
-          <div className={styles.box}>
-            <img src={tracks[currentTrackIndex]?.image} style={{ width: '150px', height: 'auto' }} />
-            <div className={styles.modalActions1}>
-              <ButtonHome style={{ backgroundColor: '#E36C1C', border: '#E36C1C' }}>
-                Adicionar
-              </ButtonHome>
-            </div>
-          </div>
-
-          <div className={styles.box}>
-            <img src={tracks[currentTrackIndex]?.image} style={{ width: '150px', height: 'auto' }} />
-            <div className={styles.modalActions1}>
-              <ButtonHome style={{ backgroundColor: '#E36C1C', border: '#E36C1C' }}>
-                Adicionar
-              </ButtonHome>
-            </div>
-          </div>
-
-
+          ))}
         </div>
-        <div />
-        
-        <div className={styles.container1}>
-          <div className={styles.box}>
-            <img src={tracks[currentTrackIndex]?.image} style={{ width: '150px', height: 'auto' }} />
-            <div className={styles.modalActions1}>
-              <ButtonHome style={{ backgroundColor: '#E36C1C', border: '#E36C1C' }}>
-                Adicionar
-              </ButtonHome>
-            </div>
-          </div>
-
-          <div className={styles.box}>
-            <img src={tracks[currentTrackIndex]?.image} style={{ width: '150px', height: 'auto' }} />
-            <div className={styles.modalActions1}>
-              <ButtonHome style={{ backgroundColor: '#E36C1C', border: '#E36C1C' }}>
-                Adicionar
-              </ButtonHome>
-            </div>
-          </div>
-
-          <div className={styles.box}>
-            <img src={tracks[currentTrackIndex]?.image} style={{ width: '150px', height: 'auto' }} />
-            <div className={styles.modalActions1}>
-              <ButtonHome style={{ backgroundColor: '#E36C1C', border: '#E36C1C' }}>
-                Adicionar
-              </ButtonHome>
-            </div>
-
-          </div>
-          <div className={styles.box}>
-            <img src={tracks[currentTrackIndex]?.image} style={{ width: '150px', height: 'auto' }} />
-            <div className={styles.modalActions1}>
-              <ButtonHome style={{ backgroundColor: '#E36C1C', border: '#E36C1C' }}>
-                Adicionar
-              </ButtonHome>
-            </div>
-          </div>
-
-          <div className={styles.box}>
-            <img src={tracks[currentTrackIndex]?.image} style={{ width: '150px', height: 'auto' }} />
-            <div className={styles.modalActions1}>
-              <ButtonHome style={{ backgroundColor: '#E36C1C', border: '#E36C1C' }}>
-                Adicionar
-              </ButtonHome>
-            </div>
-          </div>
-
-          <div className={styles.box}>
-            <img src={tracks[currentTrackIndex]?.image} style={{ width: '150px', height: 'auto' }} />
-            <div className={styles.modalActions1}>
-              <ButtonHome style={{ backgroundColor: '#E36C1C', border: '#E36C1C' }}>
-                Adicionar
-              </ButtonHome>
-            </div>
-          </div>
-        </div>
-
-
       </ReactModal>
     </div>
   );
