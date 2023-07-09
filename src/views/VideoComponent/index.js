@@ -1,9 +1,9 @@
-
 import styles from './index.module.scss';
 import { FaPause, FaPlay, FaStepBackward, FaStepForward, FaVolumeUp } from 'react-icons/fa';
 import useNewVideo from '../../hooks/useNewVideo/useNewVideo';
+import ModalVideo from '../modalVideo';
 
-function VideoPlayer() {
+function VideoPlayer({ isOpenModal, setisOpenModal }) {
   const {
     handleVideoClick,
     handleVideoEnd,
@@ -18,11 +18,14 @@ function VideoPlayer() {
     volume,
     handleVolumeChange,
     videoTracks,
-    currentTime
-  }=useNewVideo()
+    currentTime,
+    handleTrackClick,
+  } = useNewVideo();
+
+  const currentTrack = videoTracks.find((track) => track.src === videoRef.current.src);
 
   return (
-    <div className={styles}>
+    <div className={styles.AppHome}>
       <div className={styles.container}>
         <div className={styles.videoplayer}>
           <video ref={videoRef} onTimeUpdate={handleTimeUpdate} onEnded={handleVideoEnd} onClick={handleVideoClick}>
@@ -31,13 +34,10 @@ function VideoPlayer() {
             ))}
           </video>
         </div>
-        <div className={styles.title}>
-          {videoTracks.length > 0 && (
-            <h3>{videoTracks.find((track) => track.src === videoRef.current.src)?.title}</h3>
-          )}
+        <div className={styles.albumartist}>
+          {currentTrack && <h3>{currentTrack.title}</h3>}
         </div>
         <div className={styles.audioplayercontainer}>
-
           <button className={styles} onClick={handlePrev}>
             <FaStepBackward />
           </button>
@@ -78,7 +78,16 @@ function VideoPlayer() {
           />
         </div>
       </div>
-    </div >
+      <div>
+        <ModalVideo
+          videoTracks={videoTracks}
+          isOpenModal={isOpenModal}
+          setisOpenModal={setisOpenModal}
+          handleTrackClick={handleTrackClick}
+          currentTime={currentTime}
+        />
+      </div>
+    </div>
   );
 }
 

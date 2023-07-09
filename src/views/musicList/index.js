@@ -75,19 +75,6 @@ const AudioPlayerComponent = () => {
 
   return (
     <div>
-      TrackList
-      {showDivs && (
-        <>
-          <div className="custom-input album-input">
-            <input type="text" placeholder="Digite aqui" />
-            <span className="input-highlight"></span>
-          </div>
-          <div className="d-flex album-button">
-            <ButtonHome>Filtrar</ButtonHome>
-          </div>
-        </>
-      )}
-
        <h1 className="album-artist" >{tracks[currentTrackIndex]?.title}</h1>
       <div>
         <img src={tracks[currentTrackIndex]?.image} alt="Album Cover" className="album-image" />
@@ -105,7 +92,7 @@ const AudioPlayerComponent = () => {
           controls
           onPlay={handlePlay}
           onPause={handlePause}
-          onEnded={handleAudioEnded} // Adicione esse evento para passar para a próxima música
+          onEnded={handleAudioEnded}
         />
         <button className="control-button" onClick={handleNext}>
           <span className="control-icon">&gt;</span>

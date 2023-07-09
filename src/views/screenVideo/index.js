@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import styles from './index.module.scss'
 import { useNavigate } from 'react-router-dom';
-import ModalVideo from '../modalVideo';
 import VideoPlayer from '../VideoComponent';
 
 function ScreenVideo() {
@@ -29,9 +28,6 @@ function ScreenVideo() {
             <a href="#" onClick={handleButtonClickHome}>Início</a>
           </li>
           <li>
-            <a href="#" >Buscar</a>
-          </li>
-          <li>
             <a href="#" onClick={onClickModal}>Biblioteca</a>
           </li>
           <li>
@@ -40,13 +36,10 @@ function ScreenVideo() {
         </ul>
       </div>
         </div>
-      <VideoPlayer/>
-      <div>
-      <ModalVideo 
+      <VideoPlayer
       isOpenModal={isOpenModal}
       setisOpenModal={setisOpenModal}
       />
-      </div>
     </div>
   )
 }

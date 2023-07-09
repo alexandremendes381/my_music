@@ -71,7 +71,24 @@
   border-radius: 50%;
   cursor: pointer;
 }
-.title{}
+.albumartist {
+  position: absolute;
+  top: 82%;
+  max-width: 700px;
+  max-height: 500px;
+  border-radius: 10px;
+  bottom: 0;
+  color: #fff;
+  padding: 0px;
+  font-size: 18px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+
 .volume {
   width: 50px;
   height: 4px; /* Altura da barra de reprodução */

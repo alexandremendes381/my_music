@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { toastInfo, toastSuccess } from "../../utils/ToastInfo";
 
+
+
 function useNewVideo() {
     const [isPlaying, setIsPlaying] = useState(false);
     const [videoTracks, setVideoTracks] = useState([]);
@@ -21,6 +23,7 @@ function useNewVideo() {
                 id: item.id,
                 src: item.video_file,
                 title: item.title,
+                imagem_play: item.imagem_play,
             }));
             setVideoTracks(fetchedVideoTracks);
             toastSuccess('Dados encontrados com sucesso!');
@@ -89,6 +92,17 @@ function useNewVideo() {
             handlePlay();
         }
     };
+
+    const handleTrackClick = (index) => {
+        const track = videoTracks[index];
+        if (track) {
+          videoRef.current.src = track.src;
+          videoRef.current.play();
+          setIsPlaying(true);
+          setCurrentTime(0); // Reiniciar o tempo para o início do vídeo
+        }
+      };      
+    
     return {
         handleVideoClick,
         handleVideoEnd,
@@ -104,6 +118,9 @@ function useNewVideo() {
         handleVolumeChange,
         videoTracks,
         currentTime,
+        setVideoTracks,
+        handleTrackClick,
+        setCurrentTime
     }
 }
 

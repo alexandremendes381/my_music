@@ -3,8 +3,7 @@ import styles from './index.module.scss';
 import { useNavigate } from 'react-router-dom';
 import ScreenBiblioteca from '../screenBiblioteca';
 
-function SidebarMenu({ handleButtonClick, tracks, currentTrackIndex, handleTrackClick }) {
-  const [showDivs, setShowDivs] = useState(false);
+function SidebarMenu({ tracks, currentTrackIndex, handleTrackClick }) {
   const [isOpenBiblioteca, setIsBiblioteca] = useState(false);
 
 
@@ -17,10 +16,7 @@ function SidebarMenu({ handleButtonClick, tracks, currentTrackIndex, handleTrack
   const handleButtonClickVideo = () => {
     Video('/video');
   };
-  const handleLinkClick = () => {
-    setShowDivs(!showDivs);
-    handleButtonClick();
-  };
+
   const hendleClickBiblioteca = () => {
     setIsBiblioteca(true)
   }
@@ -31,9 +27,6 @@ function SidebarMenu({ handleButtonClick, tracks, currentTrackIndex, handleTrack
         <ul className={styles.sidebarmenu}>
           <li>
             <a href="#" onClick={handleButtonClickHome}>Início</a>
-          </li>
-          <li>
-            <a href="#" onClick={handleLinkClick}>Buscar</a>
           </li>
           <li>
             <a href="#" onClick={hendleClickBiblioteca}>Biblioteca</a>
