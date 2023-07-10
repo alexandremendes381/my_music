@@ -8,6 +8,7 @@ import ScreenCadastro from './views/screenCadastro/index';
 import ScreenMenu from './views/screenMenu';
 import ScreenBiblioteca from './views/screenBiblioteca';
 import ScreenVideo from './views/screenVideo';
+import ScreenNewPassword from './views/screenNewPassword';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/Menu" element={<ScreenMenu />} />
         <Route path="/Bibliotecas" element={<ScreenBiblioteca/>} />
         <Route path="/video" element={<ScreenVideo/>} />
+        <Route path="/newPassword" element={<ScreenNewPassword/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
