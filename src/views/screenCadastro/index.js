@@ -1,59 +1,41 @@
-import React, { useState } from 'react'
 import styles from './index.module.scss';
 import Button from '../../components/Button/Button';
 import Input from '../../components/Input/Input';
-import axios from 'axios';
-import { toastInfo, toastSuccess } from '../../utils/ToastInfo/index.js';
 import capa from '../../assets/images/capa.jpg'
 import home from '../../assets/images/home.jpg'
 import cadastro from '../../assets/images/cadastro.jpg'
 import { Carousel } from 'react-responsive-carousel';
-import * as yup from "yup";
-import { useNavigate } from 'react-router-dom';
+
+
 import ButtonHome from '../../components/ButtonHome/ButtonHome';
+import UseNewCadastro from '../../hooks/useNewCadastro/useNewCadastro';
 
 function ScreenCadastro() {
-  const [name, setName] = useState('')
-  const [telephone, setTelephone] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const Login = useNavigate();
-  const handleButtonClickHome = () => {
-    Login('/');
-  };
-
-  const handleButtonClickCadastro = async () => {
-    try {
-      await schema.validate({ email, password , name, telephone});
-
-      axios
-        .post('http://127.0.0.1:8000/cadastro/', {
-          name,
-          telephone,
-          email,
-          password,
-        })
-        .then(() => {
-          toastSuccess('Seu cadastro foi criado com sucesso!');
-          setName('');
-          setTelephone('');
-          setEmail('');
-          setPassword('');
-          handleButtonClickHome()
-        })
-        .catch(() => {
-          toastInfo('Não foi possível criar o cadastro');
-        });
-    } catch (error) {
-      console.error(error);
-      toastInfo(error.message);
-    }
-  };
-
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    handleButtonClickCadastro()
-  };
+  const{
+    handleFormSubmit,
+    handleButtonClickHome,
+    setPassword,
+    uf,
+    setName,
+    birthdate,
+    setBirthdate,
+    cep,
+    setCep,
+    handleButtonClickCep,
+    city,
+    setCity,
+    setuf,
+    bairro,
+    setBairro,
+    country,
+    setCountry,
+    telephone,
+    setTelephone,
+    email,
+    setEmail,
+    password,
+    name
+}=UseNewCadastro()
 
   return (
     <div>
@@ -87,11 +69,92 @@ function ScreenCadastro() {
               />
             </div>
             <div className={styles.divnew}>
+              <label htmlFor="telephone">Data de Nascimento:</label>
+              <Input
+                type="date"
+                id="birthdate"
+                name="birthdate"
+                placeholder="Digite Sua Data de Nascimento"
+                value={birthdate}
+                onChange={(e) => setBirthdate(e.target.value)}
+              />
+            </div>
+            <div className={styles.divnew}>
+              <label htmlFor="cep">CEP:</label>
+              <Input
+                type="text"
+                id="cep"
+                name="cep"
+                mask="99999-999"
+                placeholder="Digite seu CEP"
+                autoComplete="cep"
+                value={cep}
+                onChange={(e) => setCep(e.target.value)}
+              />
+            </div>
+            <div>
+            <div className={styles.divnewbutton}>
+              {cep && (
+                <ButtonHome onClick={handleButtonClickCep}>
+                  Buscar
+                </ButtonHome>
+              )}
+            </div></div>
+            <div className={styles.divnew}>
+              <label htmlFor="city">Cidade:</label>
+              <Input
+                type="text"
+                id="city"
+                name="city"
+                placeholder="Digite sua Cidade"
+                autoComplete="city"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              />
+            </div>
+            <div className={styles.divnew}>
+              <label htmlFor="city">Uf:</label>
+              <Input
+                type="text"
+                id="uf"
+                name="uf"
+                placeholder="Uf"
+                autoComplete="uf"
+                value={uf}
+                onChange={(e) => setuf(e.target.value)}
+              />
+            </div>
+            <div className={styles.divnew}>
+              <label htmlFor="bairro">Bairro:</label>
+              <Input
+                type="text"
+                id="bairro"
+                name="bairro"
+                placeholder="Digite seu Bairro"
+                autoComplete="bairro"
+                value={bairro}
+                onChange={(e) => setBairro(e.target.value)}
+              />
+            </div>
+            <div className={styles.divnew}>
+              <label htmlFor="pais">País:</label>
+              <Input
+                type="text"
+                id="pais"
+                name="pais"
+                placeholder="Digite seu País"
+                autoComplete="country"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+              />
+            </div>
+            <div className={styles.divnew}>
               <label htmlFor="telephone">Telefone:</label>
               <Input
                 type="text"
                 id="telephone"
                 name="telephone"
+                mask="(99) 9999-9999"
                 placeholder="Digite seu Telefone"
                 autoComplete="telephone"
                 value={telephone}
@@ -125,23 +188,18 @@ function ScreenCadastro() {
             <div className={styles.divButton}>
               <Button type="submit" >criar conta</Button>
               <div>
-              <ButtonHome onClick={handleButtonClickHome}>
-                voltar
-              </ButtonHome>
+                <ButtonHome onClick={handleButtonClickHome}>
+                  voltar
+                </ButtonHome>
+              </div>
             </div>
-            </div>
-            
+
           </form>
         </div>
       </header>
     </div>
   )
 }
-const schema = yup.object().shape({
-  email: yup.string().email('E-mail inválido').required('E-mail é obrigatório'),
-  password: yup.string().required('Senha é obrigatória'),
-  name: yup.string().required('E-mail é obrigatório'),
-  telephone: yup.number().required('Telefone é obrigatório'),
-});
+
 
 export default ScreenCadastro

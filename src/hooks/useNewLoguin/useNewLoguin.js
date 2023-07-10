@@ -11,7 +11,7 @@ function UseNewLogin() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const menu = useNavigate();
-
+  const newpassword = useNavigate();
   const handleButtonClick = () => {
     navigate('/Cadastro');
   };
@@ -19,7 +19,9 @@ function UseNewLogin() {
   const handleButtonClickHome = () => {
     menu('/Menu');
   };
-
+  const handleButtonClickPassword = () => {
+    newpassword('/newPassword')
+  }
   const linkedinOnClick = () => {
     window.open(`https://${linkedinURL}`, '_blank');
   };
@@ -69,8 +71,8 @@ function UseNewLogin() {
     setPassword,
     setEmail,
     email,
-    password
-
+    password,
+    handleButtonClickPassword,
   };
 }
 const schema = yup.object().shape({

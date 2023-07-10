@@ -20,7 +20,8 @@ function ScreenLogin() {
     setPassword,
     setEmail,
     email,
-    password
+    password,
+    handleButtonClickPassword
   } = UseNewLoguin()
 
   return (
@@ -100,7 +101,7 @@ function ScreenLogin() {
           <div>
             <label htmlFor="password" className='w-100'>Senha:</label>
             <Input
-             type="password"
+              type="password"
               id="password"
               name="password"
               placeholder="Digite sua senha"
@@ -118,11 +119,10 @@ function ScreenLogin() {
             </Button>
           </div>
           <div>
-            <Button>
+            <Button onClick={handleButtonClickPassword}>
               Trocar senha?
             </Button>
           </div>
-
           <div>
             <Button onClick={handleButtonClick}>criar conta</Button>
           </div>
