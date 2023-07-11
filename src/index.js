@@ -9,6 +9,8 @@ import ScreenMenu from './views/screenMenu';
 import ScreenBiblioteca from './views/screenBiblioteca';
 import ScreenVideo from './views/screenVideo';
 import ScreenNewPassword from './views/screenNewPassword';
+import ScreenBlog from './views/screenBlog';
+import ScreenMenuProducts from './views/screenMenuProducts';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -20,6 +22,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/Bibliotecas" element={<ScreenBiblioteca/>} />
         <Route path="/video" element={<ScreenVideo/>} />
         <Route path="/newPassword" element={<ScreenNewPassword/>} />
+        <Route path="/MenuPrincipal" element={<ScreenMenuProducts/>} />
+        
+        <Route path="/ScreenBlog" element={<ScreenBlog/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

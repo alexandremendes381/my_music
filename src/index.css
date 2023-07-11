@@ -11,3 +11,88 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#app-container {
+  position: relative;
+  height: 100vh; /* Ocupa a altura total da janela */
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url(../src/assets/images/Login.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.screen-login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#app-containerScreen {
+  height: 100vh; /* Ocupa a altura total da janela */
+}
+
+#backgroundScreen {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url(../src/assets/images/Login.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.centered-text {
+  font-size: 23px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  h1 {
+    margin-bottom: 15px;
+  }
+
+ 
+}
+
+
+
+#backgroundScreennewsenha {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url(../src/assets/images/Login.jpeg);
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+  }
+
+.centered-textnewsenha {
+  font-size: 23px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  h1 {
+    margin-bottom: 15px;
+  }
+
+ 
+}
+

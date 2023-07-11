@@ -1,17 +1,10 @@
 import styles from './index.module.scss';
-import Button from '../../components/Button/Button';
 import Input from '../../components/Input/Input';
-import capa from '../../assets/images/capa.jpg'
-import home from '../../assets/images/home.jpg'
-import cadastro from '../../assets/images/cadastro.jpg'
-import { Carousel } from 'react-responsive-carousel';
-
-
-import ButtonHome from '../../components/ButtonHome/ButtonHome';
+import mar from '../../assets/images/mar.mp4'
 import UseNewCadastro from '../../hooks/useNewCadastro/useNewCadastro';
 
 function ScreenCadastro() {
-  const{
+  const {
     handleFormSubmit,
     handleButtonClickHome,
     setPassword,
@@ -35,27 +28,20 @@ function ScreenCadastro() {
     setEmail,
     password,
     name
-}=UseNewCadastro()
+  } = UseNewCadastro()
 
   return (
     <div>
+      <div className={styles.videoBackground}>
+        <video autoPlay loop muted className={styles.video} preload="auto">
+          <source src={mar} type="video/mp4" />
+        </video>
+
+      </div>
       <header className={styles.container}>
+
         <div >
           <form onSubmit={handleFormSubmit}>
-            <Carousel fade>
-              <div>
-                <img src={capa} alt="Imagem 1" />
-                <p className="legend">Legenda 1</p>
-              </div>
-              <div>
-                <img src={home} alt="Imagem 2" />
-                <p className="legend">Legenda 2</p>
-              </div>
-              <div>
-                <img src={cadastro} alt="Imagem 3" />
-                <p className="legend">Legenda 3</p>
-              </div>
-            </Carousel>
             <div className={styles.divnew}>
               <label htmlFor="email">Nome:</label>
               <Input
@@ -93,13 +79,13 @@ function ScreenCadastro() {
               />
             </div>
             <div>
-            <div className={styles.divnewbutton}>
-              {cep && (
-                <ButtonHome onClick={handleButtonClickCep}>
-                  Buscar
-                </ButtonHome>
-              )}
-            </div></div>
+              <div >
+                {cep && (
+                  <button  className={styles.button} onClick={handleButtonClickCep}>
+                    Buscar
+                  </button>
+                )}
+              </div></div>
             <div className={styles.divnew}>
               <label htmlFor="city">Cidade:</label>
               <Input
@@ -185,15 +171,14 @@ function ScreenCadastro() {
                 onChange={e => setPassword(e.target.value)}
               />
             </div>
-            <div className={styles.divButton}>
-              <Button type="submit" >criar conta</Button>
-              <div>
-                <ButtonHome onClick={handleButtonClickHome}>
-                  voltar
-                </ButtonHome>
-              </div>
+            <div className={styles.divContainercenter}>
+              <button className={styles.buttoncenter} type="submit" >criar conta</button>
             </div>
-
+            <div className={styles.divContainercenter}>
+                <button className={styles.button} onClick={handleButtonClickHome}>
+                  voltar
+                </button>
+              </div>
           </form>
         </div>
       </header>

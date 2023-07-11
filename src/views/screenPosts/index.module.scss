@@ -1,25 +1,40 @@
 .container {
-    position: absolute;
-    top: 20%; /* Posição vertical desejada */
-    right: 8pc; /* Posição à direita */
-    transform: translate(0, -0%); /* Centralizar verticalmente */
-  }
-
-  .image {
-    max-width: 600px;
-    max-height: 600px;
-  }
-  
-  .a {
-    color: #333;
-    text-decoration: none;
+  margin: 0 auto;
+  max-width: 400px;
+  position: fixed; /* Alterado para position: fixed */
+  left: 0; /* Alterado para left: 0 */
+  width: 90%;
+ 
 }
 
-.textimg {
-  position: absolute;
-  margin-top: 0;
-  top: 75%; /* Posição vertical desejada */
-  right: 10pc; /* Posição à direita */
-  max-width: 550px;
-  max-height: 550px;
+.color {
+  color: #dbdbdb;
+}
+
+.carouselContainer {
+  position: fixed;
+  top: 20px;
+  left: 50px;
+  width: 100px;
+}
+
+.divButton {
+  text-align: center;
+  margin-top: 80px;
+  color: #dbdbdb;
+  
+  &:hover {
+    color: red;
+  }
+}
+
+.divnew {
+  text-align: center;
+  font-size: 28px;
+  margin-top: 188px;
+  color: #dbdbdb;
+  
+  &:hover {
+    color: red;
+  }
 }
