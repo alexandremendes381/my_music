@@ -5,38 +5,36 @@ import axios from 'axios';
 import * as yup from "yup";
 
 function UseNewLogin() {
-  const [linkedinURL] = useState('www.linkedin.com/in/alexandre-mendes-8b8473240');
-  const [githubURL] = useState('www.github.com/alexandremendes381');
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const menu = useNavigate();
   const newpassword = useNavigate();
+  const blog = useNavigate();
+
+  const handleButtonClickBlog = () => {
+    navigate('/ScreenBlog')
+  }
   const handleButtonClick = () => {
     navigate('/Cadastro');
   };
 
   const handleButtonClickHome = () => {
-    menu('/Menu');
+    menu('/MenuPrincipal');
   };
   const handleButtonClickPassword = () => {
     newpassword('/newPassword')
   }
-  const linkedinOnClick = () => {
-    window.open(`https://${linkedinURL}`, '_blank');
-  };
 
-  const GithubOnClick = () => {
-    window.open(`https://${githubURL}`, '_blank');
-  };
 
 
   const handleButtonClickLogin = async (e) => {
     e.preventDefault();
-  
+
     try {
       await schema.validate({ email, password });
-  
+
       axios.get('http://127.0.0.1:8000/cadastro/', {
         params: {
           email: email,
@@ -47,6 +45,7 @@ function UseNewLogin() {
           if (Object.keys(res.data).length !== 0) {
             toastSuccess('Logado com sucesso!');
             handleButtonClickHome();
+            
           } else {
             toastInfo('Não foi possível Logar');
           }
@@ -63,8 +62,6 @@ function UseNewLogin() {
 
 
   return {
-    linkedinOnClick,
-    GithubOnClick,
     handleButtonClick,
     handleButtonClickHome,
     handleButtonClickLogin,
@@ -73,6 +70,7 @@ function UseNewLogin() {
     email,
     password,
     handleButtonClickPassword,
+    handleButtonClickBlog,
   };
 }
 const schema = yup.object().shape({

@@ -3,10 +3,6 @@ import styles from './index.module.scss';
 import Input from '../../components/Input/Input';
 import ButtonHome from '../../components/ButtonHome/ButtonHome';
 import Button from '../../components/Button/Button';
-import capa from '../../assets/images/capa.jpg';
-import home from '../../assets/images/home.jpg';
-import cadastro from '../../assets/images/cadastro.jpg';
-import { Carousel } from 'react-responsive-carousel';
 import { useNavigate } from 'react-router-dom';
 
 function ScreenNewPassword() {
@@ -71,24 +67,10 @@ function ScreenNewPassword() {
   };
 
   return (
-    <div>
-      <header className={styles.container}>
-        <div>
+    <div id="app-containernewsenha">
+      <div id="backgroundScreennewsenha">
+        <header className={styles.container}>
           <form onSubmit={handleEmailConfirmation}>
-            <Carousel fade>
-              <div>
-                <img src={capa} alt="Imagem 1" />
-                <p className="legend">Legenda 1</p>
-              </div>
-              <div>
-                <img src={home} alt="Imagem 2" />
-                <p className="legend">Legenda 2</p>
-              </div>
-              <div>
-                <img src={cadastro} alt="Imagem 3" />
-                <p className="legend">Legenda 3</p>
-              </div>
-            </Carousel>
             <div className={styles.divnew}>
               <label htmlFor="email">E-mail:</label>
               <Input
@@ -102,8 +84,8 @@ function ScreenNewPassword() {
               />
             </div>
             {!emailConfirmed ? (
-              <div className={styles.divButton}>
-                <Button type="submit">Confirmar E-mail</Button>
+              <div className={styles.divContainercenter}>
+                <button className={styles.buttoncenter} type="submit">Confirmar E-mail</button>
               </div>
             ) : (
               <div className={styles.divnew}>
@@ -122,20 +104,23 @@ function ScreenNewPassword() {
             {errorMessage && <p className={styles.error}>{errorMessage}</p>}
             <div className={styles.divButton}>
               {emailConfirmed && (
-                <Button type="submit" onClick={handlePasswordChange}>
-                  Atualizar Senha
-                </Button>
+                <div className={styles.divContainercenter}>
+                  <button className={styles.buttoncenter} type="submit" onClick={handlePasswordChange}>
+                    Atualizar Senha
+                  </button> </div>
               )}
-              <div>
-                <ButtonHome
+              <div className={styles.divContainercenter}>
+                <button
+                  className={styles.buttoncenter}
                   onClick={handleButtonClick}
-                >voltar</ButtonHome>
+                >voltar</button>
               </div>
             </div>
           </form>
-        </div>
-      </header>
-    </div>
+
+        </header>
+      </div>
+    </div >
   );
 }
 

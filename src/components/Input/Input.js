@@ -4,13 +4,14 @@ import InputMask from 'react-input-mask';
 
 function Input({ children, autoComplete, maxLength, mask, ...restProps }) {
   return (
-    <div className={styles.custominput}>
+    <div className={styles.inputContainer}>
       {mask ? (
         <InputMask {...restProps} autoComplete={autoComplete} mask={mask} />
       ) : (
         <input {...restProps} autoComplete={autoComplete} maxLength={maxLength} />
       )}
     </div>
+
   );
 }
 
