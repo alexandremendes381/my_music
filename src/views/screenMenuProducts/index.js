@@ -3,19 +3,20 @@ import Loading from '../../components/Loading';
 import styles from './index.module.scss';
 import { useNavigate } from 'react-router-dom';
 import Account from '../../utils/Account';
+import ScreenNews from '../screenNews';
 
 function ScreenMenuProducts() {
   const [isLoading, setIsLoading] = useState(true);
-    const Music = useNavigate()
-    const Video = useNavigate()
+  const Music = useNavigate()
+  const Video = useNavigate()
 
-    const hendleclickVideo = () => {
-        Video('/video')
-    }
+  const hendleclickVideo = () => {
+    Video('/video')
+  }
 
-    const hendleclickMusic = () => {
-        Music('/Menu')
-    }
+  const hendleclickMusic = () => {
+    Music('/Menu')
+  }
 
 
   useEffect(() => {
@@ -34,33 +35,36 @@ function ScreenMenuProducts() {
         <Loading />
       ) : (
         <div id="app-containerScreen">
-      <div id="backgroundScreen">
-        <div>
-          <Account/>
-        </div>
-      <div className={styles.centeredtext}>
-            <h1>Welcome to Supreme Songs</h1>
+          <div id="backgroundScreen">
             <div>
-        <button type="text"
-         className={styles.loginButton}
-         onClick={hendleclickMusic}
-         >
-            Ouvir Musicas
-        </button>
-        </div>
-        <button type="text"
-        onClick={hendleclickVideo}
-        className={styles.loginButton}>
-            Assistir Videos
-        </button>
-        <div>
-        </div>
-        </div>
-        </div>
+              <Account />
+            </div>
+            <div className={styles.centeredtext}>
+              <h1>Welcome to Supreme Songs</h1>
+              <h4>Expert in the best music</h4>
+              <div>
+                <button type="text"
+                  className={styles.loginButton}
+                  onClick={hendleclickMusic}
+                >
+                  Ouvir Musicas
+                </button>
+              </div>
+              <button type="text"
+                onClick={hendleclickVideo}
+                className={styles.loginButton}>
+                Assistir Videos
+              </button>
+              <div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
-      <p>Novidades na pagina </p>
+      <div>
+      <ScreenNews/>
     </div>
+    </div >
   );
 }
 

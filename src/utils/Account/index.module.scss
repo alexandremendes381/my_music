@@ -1,48 +1,84 @@
 .ball-input {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-  
-  .ball-input input {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: none;
-    background-color: #ccc;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .ball-input input[type="text"] {
-    display: none;
-  }
-  
-  .ball-input input[type="checkbox"] {
-    appearance: none;
-    cursor: pointer;
-  }
-  
-  .ball-input input[type="checkbox"]::before {
-    content: "";
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: white;
-  }
-  
-  .ball-input input[type="checkbox"]:checked::before {
-    background-color: #ff0000;
-  }
-  
-  .ball-input:hover {
-    color: #ff0000;
-  }
-  
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+  border-radius: 100%;
+}
+
+.ball-input img {
+  width: 30px;
+  height: auto;
+}
+
+.ball-input:hover {
+  color: #ff0000;
+}
+
+.options {
+  position: fixed;
+  right: 0;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+  border-radius: 100%;
+  padding: 10px;
+}
+
+.options button {
+  margin-bottom: 5px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.options button:hover {
+  color: #ff0000;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo opaco */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.sidebarModal {
+
+
+}
+
+.closeModalButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.closeModalButton:hover {
+  color: #ff0000;
+}
+

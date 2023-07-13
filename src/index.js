@@ -11,23 +11,26 @@ import ScreenVideo from './views/screenVideo';
 import ScreenNewPassword from './views/screenNewPassword';
 import ScreenBlog from './views/screenBlog';
 import ScreenMenuProducts from './views/screenMenuProducts';
+import { UserProvider } from './hooks/userContext/userContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/Cadastro" element={<ScreenCadastro />} />
-        <Route path="/Menu" element={<ScreenMenu />} />
-        <Route path="/Bibliotecas" element={<ScreenBiblioteca/>} />
-        <Route path="/video" element={<ScreenVideo/>} />
-        <Route path="/newPassword" element={<ScreenNewPassword/>} />
-        <Route path="/MenuPrincipal" element={<ScreenMenuProducts/>} />
-        
-        <Route path="/ScreenBlog" element={<ScreenBlog/>} />
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+    <UserProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/Cadastro" element={<ScreenCadastro />} />
+          <Route path="/Bibliotecas" element={<ScreenBiblioteca />} />
+          <Route path="/video" element={<ScreenVideo />} />
+          <Route path="/newPassword" element={<ScreenNewPassword />} />
+          <Route path="/MenuPrincipal" element={<ScreenMenuProducts />} />
+          <Route path="/Menu" element={<ScreenMenu />} />
+          <Route path="/ScreenBlog" element={<ScreenBlog />} />
+        </Routes>
+      </BrowserRouter>
+    </UserProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 reportWebVitals();

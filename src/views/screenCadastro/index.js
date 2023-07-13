@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
 import Input from '../../components/Input/Input';
 import mar from '../../assets/images/mar.mp4'
-import UseNewCadastro from '../../hooks/useNewCadastro/useNewCadastro';
+import UseNewCadastro from '../../hooks/userNewCadastro/useNewCadastro';
 
 function ScreenCadastro() {
   const {
