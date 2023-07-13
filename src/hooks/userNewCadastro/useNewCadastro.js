@@ -16,6 +16,7 @@ function UseNewCadastro() {
     const [uf, setuf] = useState('');
     const [country, setCountry] = useState('');
     const Login = useNavigate();
+    
     const handleButtonClickHome = () => {
         Login('/');
     };

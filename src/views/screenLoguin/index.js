@@ -1,5 +1,5 @@
 import styles from './index.module.scss';
-import UseNewLoguin from '../../hooks/useNewLoguin/useNewLoguin'
+import UseNewLoguin from '../../hooks/userNewLoguin/useNewLoguin'
 
 function ScreenLogin() {
   const {

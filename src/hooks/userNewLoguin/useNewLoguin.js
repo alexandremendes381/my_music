@@ -1,17 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toastInfo, toastSuccess } from "../../utils/ToastInfo";
 import axios from 'axios';
 import * as yup from "yup";
+import { UserContext } from "../userContext/userContext";
+
 
 function UseNewLogin() {
-
   const [email, setEmail] = useState('');
+  const { userData, setUserData } = useContext(UserContext);
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const menu = useNavigate();
   const newpassword = useNavigate();
-  const blog = useNavigate();
+
 
   const handleButtonClickBlog = () => {
     navigate('/ScreenBlog')
@@ -44,8 +46,11 @@ function UseNewLogin() {
         .then((res) => {
           if (Object.keys(res.data).length !== 0) {
             toastSuccess('Logado com sucesso!');
+            setEmail(email);
+            setPassword(password);
+            setUserData(res.data); // Update the user data in the context
             handleButtonClickHome();
-            
+            localStorage.setItem('userData', JSON.stringify(res.data));
           } else {
             toastInfo('Não foi possível Logar');
           }
@@ -59,6 +64,7 @@ function UseNewLogin() {
       toastInfo(error.message);
     }
   };
+
 
 
   return {

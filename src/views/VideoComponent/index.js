@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 import { FaPause, FaPlay, FaStepBackward, FaStepForward, FaVolumeUp } from 'react-icons/fa';
-import useNewVideo from '../../hooks/useNewVideo/useNewVideo';
+import useNewVideo from '../../hooks/userNewVideo/useNewVideo';
 import ModalVideo from '../modalVideo';
 
 function VideoPlayer({ isOpenModal, setisOpenModal }) {
