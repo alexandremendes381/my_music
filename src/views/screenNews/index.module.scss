@@ -1,4 +1,47 @@
-
-.background{
-    background-color: #2a2a2a;
-}
+.background {
+    background-color: #000000;
+    padding: 20px; /* Adicione um espaçamento interno para afastar o conteúdo das bordas */
+  }
+  
+  .postContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .image {
+    width: 45%;
+    max-width: 400px; /* Defina um valor máximo para evitar que a imagem fique muito grande */
+  }
+  
+  .textContainer {
+    width: 45%; /* Aumente a largura do contêiner de texto para ocupar mais espaço */
+    margin-right: 20px;
+    color: #FFFFFF;
+  }
+  
+  .text {
+    color: #FFFFFF;
+    margin: 0;
+    font-size: 19px;
+    transition: color 0.3s ease;
+  }
+  
+  .text:hover {
+    color: red;
+  }
+  
+  
+  .background {
+    background-color: #000000;
+    position: relative;
+    overflow: hidden;
+  }
+  

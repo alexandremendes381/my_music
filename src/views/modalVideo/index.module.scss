@@ -17,13 +17,13 @@
   }
   
   .sidebarModal {
-    background-color: #040306;
+    background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    width: 200px; /* Ajuste a largura conforme necessário */
+    width: 166px; /* Ajuste a largura conforme necessário */
     padding: 20px;
   }
   
@@ -46,7 +46,7 @@
   }
   
   .box {
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 10px; /* Ajuste o espaçamento interno conforme necessário */
     border-radius: 5px;
     margin-bottom: 10px;
