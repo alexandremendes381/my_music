@@ -1,26 +1,95 @@
+.AppHome{
+  background-color: #202124;
+  width: 100vw;
+  height: 100vh;
+}
 
- .sidebar {
-   background-color: #040306;
-   color: #fff;
-   width: 220px;
-   height: 100vh;
-   position: fixed;
-   left: 0;
-   top: 0;
- }
+.sidebarContainer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 151px;
+  height: 151vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
- .sidebarmenu {
-   list-style-type: none;
-   padding: 0;
-   margin: 0;
- }
+}
 
- .sidebarmenu li {
-   padding: 15px;
-   border-bottom: 1px solid #222;
- }
+.sidebar {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  z-index: 999;
+}
 
- .sidebarmenu li a {
-   color: #fff;
-   text-decoration: none;
- }
+.open {
+  transform: translateX(0);
+}
+
+.sidebarmenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebarmenu li {
+  padding: 15px;
+  border-bottom: 1px solid #222;
+}
+
+.sidebarmenu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebarToggle {
+  background-color: transparent;
+  border: none;
+  color: #FFF;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+.sidebarButton {
+  background-color: transparent;
+  border: none;
+  color: #FFF;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  bottom: 2px; /* Ajuste o valor conforme necessário */
+  left: 20px;
+  z-index: 999;
+}
+
+
+.redButton {
+  background-color: red;
+}
+
+.sidebarToggle svg {
+  width: 20px;
+  height: 20px;
+}

@@ -1,8 +1,4 @@
-.AppHome{
-  background-color: #202124;
-  width: 100vw;
-  height: 100vh;
-}
+
 .container {
     width: 640px; /* Defina a largura desejada para o player */
     margin: 0 auto;
@@ -16,11 +12,15 @@
   
   .videoplayer video {
     position: absolute;
-    margin-top: 120px;
-    width: 100%;
-    height: 100%;
+    top: -75%;
+    left: 105%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 130%;
     object-fit: cover;
   }
+  
+  
   
   .controls {
     display: flex;
@@ -73,7 +73,7 @@
 }
 .albumartist {
   position: absolute;
-  top: 82%;
+  top:56%;
   max-width: 700px;
   max-height: 500px;
   border-radius: 10px;
@@ -81,11 +81,12 @@
   color: #fff;
   padding: 0px;
   font-size: 18px;
-  text-align: left;
+  left: 190px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   animation: marquee 20s linear infinite;
+ 
 }
 
 
