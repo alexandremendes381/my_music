@@ -1,0 +1,44 @@
+.screenrareimages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: relative;
+
+    .img {
+        min-width: 200px;
+        max-width: 300px;
+        margin: 10px;
+        transform: rotateZ(0) rotateY(0) rotateX(0);
+        transition: transform 0.5s ease;
+
+        &:hover {
+            transform: rotateZ(randomNumber(0, 360)) rotateY(randomNumber(0, 360)) rotateX(randomNumber(0, 360));
+        }
+    }
+
+    .button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        z-index: 999;
+
+        button {
+            margin-left: 10px;
+            display: inline-flex;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            color: red;
+            background-color: black;
+
+            &:hover {
+                background-color: darkred;
+            }
+        }
+    }
+}

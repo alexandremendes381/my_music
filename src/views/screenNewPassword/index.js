@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import styles from './index.module.scss';
 import Input from '../../components/Input/Input';
-import ButtonHome from '../../components/ButtonHome/ButtonHome';
-import Button from '../../components/Button/Button';
 import { useNavigate } from 'react-router-dom';
 
 function ScreenNewPassword() {

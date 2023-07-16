@@ -9,6 +9,11 @@ function ScreenMenuProducts() {
   const [isLoading, setIsLoading] = useState(true);
   const Music = useNavigate()
   const Video = useNavigate()
+  const images = useNavigate()
+
+  const hendleclickImages = () => {
+    images('/ScreenRareImages')
+  }
 
   const hendleclickVideo = () => {
     Video('/video')
@@ -50,12 +55,19 @@ function ScreenMenuProducts() {
                   Ouvir Musicas
                 </button>
               </div>
+              <div>
               <button type="text"
                 onClick={hendleclickVideo}
                 className={styles.loginButton}>
                 Assistir Videos
               </button>
+              </div>
               <div>
+              <button type="text"
+                onClick={hendleclickImages}
+                className={styles.loginButton}>
+                Fotos Raras
+              </button>
               </div>
             </div>
           </div>
