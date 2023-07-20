@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Loading from '../../components/Loading';
 import styles from './index.module.scss';
 import { useNavigate } from 'react-router-dom';
-import Account from '../../utils/Account';
+
 import ScreenNews from '../screenNews';
+import Account from '../Account';
 
 function ScreenMenuProducts() {
   const [isLoading, setIsLoading] = useState(true);

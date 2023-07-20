@@ -1,0 +1,89 @@
+.container {
+    float: right;
+    margin-top: 50px;
+    left: -25px;
+    max-width: 330px;
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+  }
+  
+  .divContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .divnew {
+    margin-right: 10px; /* Espaçamento entre os elementos */
+  }
+  
+  .button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+  
+  .divContainercenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+  }
+  
+  .buttoncenter {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+  
+  .color {
+    color: #dbdbdb;
+  }
+  
+  .carouselContainer {
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    width: 100px;
+  }
+  
+  .divnew {
+    text-align: center;
+  }
+  
+  .divnewbutton {
+    text-align: center;
+    margin-top: 12px;
+  }
+  
+  .divButton {
+    margin-top: 8px;
+    text-align: center;
+    position: relative;
+    transition: top 0.2s ease-out;
+  }
+  
+  .ReactModal__Content {
+    overflow: hidden; /* Desabilita o scroll da tela de trás */
+  }
+  
+  .modalContent {
+    overflow: auto; /* Habilita o scroll somente no conteúdo do modal */
+    max-height: 80vh; /* Define a altura máxima do conteúdo do modal */
+  }
+  
