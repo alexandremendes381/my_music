@@ -82,7 +82,7 @@ function ScreenCadastro() {
               />
             </div>
             <div className={styles.divnew}>
-              <label htmlFor="telephone">Data de Nascimento:</label>
+              <label htmlFor="date">Data de Nascimento:</label>
               <Input
                 type="date"
                 id="birthdate"

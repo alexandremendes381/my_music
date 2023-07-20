@@ -52,8 +52,8 @@ function Account() {
         <div>
           <div className={styles['options']}>
             <span>Olá. {userData[0].name.split(" ")[0]}</span>
-            <Button onClick={handleToggleModal}>Manage account</Button>
-            <Button onClick={handleLogout}>Logout</Button>
+            <Button onClick={handleToggleModal}>Minha Conta</Button>
+            <Button onClick={handleLogout}>Sair</Button>
           </div>
         </div>
       )}

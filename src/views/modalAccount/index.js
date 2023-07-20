@@ -74,7 +74,7 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
       contentLabel="Manage Account Modal"
     >
       <div className={styles.modalContent}>
-        <h2>Manage Account</h2>
+        <h2>Minha Conta</h2>
         <div>
           <label htmlFor="name">Name:</label>
           <InputNew
@@ -94,7 +94,7 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
           />
         </div>
         <div>
-          <label htmlFor="telephone">Telephone:</label>
+          <label htmlFor="telephone">Telefone:</label>
           <InputNew
             type="text"
             id="telephone"
@@ -112,7 +112,7 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
           />
         </div>
         <div>
-          <label htmlFor="city">City:</label>
+          <label htmlFor="city">Cidade:</label>
           <InputNew
             type="text"
             id="city"
@@ -121,9 +121,11 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
           />
         </div>
         <div>
-          <label htmlFor="birthdate">Birthdate:</label>
+          <label htmlFor="birthdate">Data de Nascimento:</label>
           <InputNew
-            type="text"
+            type="date"
+            min="0000-01-01"
+            max="9999-12-31"
             id="birthdate"
             value={birthdate}
             onChange={e => setBirthdate(e.target.value)}
@@ -147,8 +149,8 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
             onChange={e => setBairro(e.target.value)}
           />
         </div>
-        <Button className="w-100" onClick={handleCombinedAction}>Save</Button>
-        <Button onClick={handleToggleModalClose}>Logout</Button>
+        <Button className="w-100" onClick={handleCombinedAction}>Salvar</Button>
+        <Button onClick={handleToggleModalClose}>Fechar</Button>
       </div>
     </ReactModal>
   )

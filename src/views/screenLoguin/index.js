@@ -16,7 +16,7 @@ function ScreenLogin() {
     <div className={styles.container}>
       <div className='mt-3'>
         <div className={styles.divnew}>
-         <h1>Sign Up</h1> 
+         <h1>Login</h1> 
         </div>
         
         <div>
@@ -51,7 +51,7 @@ function ScreenLogin() {
           >
           
           </input>
-          <span>accept terms of use</span> 
+          <span>Aceitar termos de uso</span> 
         </div>
 
         <div className={styles.buttonsContainer}>
@@ -62,11 +62,11 @@ function ScreenLogin() {
           </div>
           <div style={{ flex: 1 }}>
             <button onClick={handleButtonClickPassword}>
-            Forgot your password?
+            Esqueceu a senha?
             </button>
           </div>
           <div style={{ flex: 1 }}>
-            <button onClick={handleButtonClick}>new account?</button>
+            <button onClick={handleButtonClick}>Nova Conta?</button>
           </div>
         </div>
 
