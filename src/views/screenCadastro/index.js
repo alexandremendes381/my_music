@@ -3,6 +3,7 @@ import Input from '../../components/Input/Input';
 import mar from '../../assets/images/mar.mp4'
 import UseNewCadastro from '../../hooks/userNewCadastro/useNewCadastro';
 
+
 function ScreenCadastro() {
   const {
     handleFormSubmit,
@@ -27,8 +28,12 @@ function ScreenCadastro() {
     email,
     setEmail,
     password,
-    name
+    name,
+    selfie,
+    handleFileChange
   } = UseNewCadastro()
+
+
 
   return (
     <div>
@@ -41,7 +46,29 @@ function ScreenCadastro() {
       <header className={styles.container}>
 
         <div >
-          <form onSubmit={handleFormSubmit}>
+          <form onSubmit={handleFormSubmit} encType="multipart/form-data">
+
+            <div className={styles.containerimg}>
+              <label htmlFor="fileInput">
+                {selfie ? (
+                  <img
+                    type="multipart/form-data"
+                    src={selfie}
+                    alt="Selfie"
+                    className={styles.imagemPlaceholder}
+                  />
+                ) : (
+                  <div className={styles.imagemPlaceholder} />
+                )}
+              </label>
+              <input
+                type="file"
+                id="fileInput"
+                className={styles.inputimg}
+                onChange={handleFileChange}
+              />
+            </div>
+
             <div className={styles.divnew}>
               <label htmlFor="email">Nome:</label>
               <Input
@@ -60,6 +87,8 @@ function ScreenCadastro() {
                 type="date"
                 id="birthdate"
                 name="birthdate"
+                min="0000-01-01"
+                max="9999-12-31"
                 placeholder="Digite Sua Data de Nascimento"
                 value={birthdate}
                 onChange={(e) => setBirthdate(e.target.value)}
@@ -81,7 +110,7 @@ function ScreenCadastro() {
             <div>
               <div >
                 {cep && (
-                  <button  className={styles.button} onClick={handleButtonClickCep}>
+                  <button className={styles.button} onClick={handleButtonClickCep}>
                     Buscar
                   </button>
                 )}
@@ -175,14 +204,14 @@ function ScreenCadastro() {
               <button className={styles.buttoncenter} type="submit" >criar conta</button>
             </div>
             <div className={styles.divContainercenter}>
-                <button className={styles.button} onClick={handleButtonClickHome}>
-                  voltar
-                </button>
-              </div>
+              <button className={styles.button} onClick={handleButtonClickHome}>
+                voltar
+              </button>
+            </div>
           </form>
         </div>
-      </header>
-    </div>
+      </header >
+    </div >
   )
 }
 

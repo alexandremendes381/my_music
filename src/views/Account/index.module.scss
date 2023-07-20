@@ -8,16 +8,15 @@
   color: white;
   cursor: pointer;
   transition: color 0.3s;
-  border-radius: 100%;
-}
 
-.ball-input img {
-  width: 30px;
-  height: auto;
-}
+  img {
+    width: 30px;
+    height: auto;
+  }
 
-.ball-input:hover {
-  color: #ff0000;
+  &:hover {
+    color: #ff0000;
+  }
 }
 
 .options {
@@ -27,26 +26,43 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: center; /* Adicionado para centralizar verticalmente */
   background-color: transparent;
   color: white;
   cursor: pointer;
   transition: color 0.3s;
-  border-radius: 100%;
-  padding: 10px;
+  width: 100%; /* Adicionado para ocupar a largura total */
+
+  span {
+    margin-bottom: 5px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    transition: color 0.3s;
+    text-align: left; /* Adicionado para alinhar o texto à esquerda */
+
+    &:hover {
+      color: #ff0000;
+    }
+  }
+
+  button {
+    margin-bottom: 5px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #ff0000;
+    }
+  }
 }
 
-.options button {
-  margin-bottom: 5px;
-  background-color: transparent;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: color 0.3s;
-}
 
-.options button:hover {
-  color: #ff0000;
-}
 
 .modalOverlay {
   position: fixed;
@@ -62,8 +78,7 @@
 }
 
 .sidebarModal {
-
-
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .closeModalButton {
@@ -71,14 +86,14 @@
   top: 10px;
   right: 10px;
   background-color: transparent;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
   border: none;
   cursor: pointer;
   font-size: 18px;
   transition: color 0.3s;
-}
 
-.closeModalButton:hover {
-  color: #ff0000;
+  &:hover {
+    color: #ff0000;
+  }
 }
 
