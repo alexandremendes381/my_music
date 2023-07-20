@@ -6,6 +6,7 @@ import { UserContext } from '../../hooks/userContext/userContext';
 import styles from './index.module.scss'
 import Input from '../../components/Input/Input';
 import { toastSuccess } from '../../utils/ToastInfo';
+import InputNew from '../../components/InputNew/InputNew';
 
 function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, handleUpdateData }) {
   const { userData } = useContext(UserContext);
@@ -76,7 +77,7 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
         <h2>Manage Account</h2>
         <div>
           <label htmlFor="name">Name:</label>
-          <Input
+          <InputNew
             type="text"
             id="name"
             value={name}
@@ -85,7 +86,7 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
         </div>
         <div>
           <label htmlFor="email">Email:</label>
-          <Input
+          <InputNew
             type="email"
             id="email"
             value={email}
@@ -94,7 +95,7 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
         </div>
         <div>
           <label htmlFor="telephone">Telephone:</label>
-          <Input
+          <InputNew
             type="text"
             id="telephone"
             value={telephone}
@@ -103,7 +104,7 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
         </div>
         <div>
           <label htmlFor="cep">CEP:</label>
-          <Input
+          <InputNew
             type="text"
             id="cep"
             value={cep}
@@ -112,7 +113,7 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
         </div>
         <div>
           <label htmlFor="city">City:</label>
-          <Input
+          <InputNew
             type="text"
             id="city"
             value={city}
@@ -121,7 +122,7 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
         </div>
         <div>
           <label htmlFor="birthdate">Birthdate:</label>
-          <Input
+          <InputNew
             type="text"
             id="birthdate"
             value={birthdate}
@@ -130,7 +131,7 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
         </div>
         <div>
           <label htmlFor="uf">UF:</label>
-          <Input
+          <InputNew
             type="text"
             id="uf"
             value={uf}
@@ -139,7 +140,7 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
         </div>
         <div>
           <label htmlFor="bairro">Bairro:</label>
-          <Input
+          <InputNew
             type="text"
             id="bairro"
             value={bairro}
