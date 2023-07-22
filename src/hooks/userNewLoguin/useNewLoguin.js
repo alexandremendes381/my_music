@@ -12,7 +12,7 @@ function UseNewLogin() {
   const navigate = useNavigate();
   const menu = useNavigate();
   const newpassword = useNavigate();
-
+console.log(userData)
   const handleButtonClickBlog = () => {
     navigate('/ScreenBlog');
   }
