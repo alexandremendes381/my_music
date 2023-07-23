@@ -10,9 +10,8 @@ function UseNewLogin() {
   const [password, setPassword] = useState('');
   const { userData, setUserData } = useContext(UserContext); // Separate state for userData
   const navigate = useNavigate();
-  const menu = useNavigate();
   const newpassword = useNavigate();
-console.log(userData)
+
   const handleButtonClickBlog = () => {
     navigate('/ScreenBlog');
   }
@@ -22,7 +21,7 @@ console.log(userData)
   };
 
   const handleButtonClickHome = () => {
-    menu('/MenuPrincipal');
+    navigate('/MenuPrincipal');
   };
 
   const handleButtonClickPassword = () => {
@@ -88,7 +87,7 @@ console.log(userData)
     password,
     handleButtonClickPassword,
     handleButtonClickBlog,
-    handleUpdateData
+    handleUpdateData,
   };
 }
 

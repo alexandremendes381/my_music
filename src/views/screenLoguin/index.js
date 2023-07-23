@@ -10,6 +10,7 @@ function ScreenLogin() {
     email,
     password,
     handleButtonClickPassword,
+
   } = UseNewLoguin()
 
   return (
@@ -45,15 +46,6 @@ function ScreenLogin() {
             />
           </div>
         </div>
-        <div>
-          <input
-          type="checkbox"
-          >
-          
-          </input>
-          <span>Aceitar termos de uso</span> 
-        </div>
-
         <div className={styles.buttonsContainer}>
           <div >
             <button onClick={handleButtonClickLogin} className={styles.loginButton}>

@@ -30,7 +30,10 @@ function ScreenCadastro() {
     password,
     name,
     selfie,
-    handleFileChange
+    handleFileChange,
+    handleButtonClickTerms,
+    setTerms,
+    terms,
   } = UseNewCadastro()
 
 
@@ -199,6 +202,15 @@ function ScreenCadastro() {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
               />
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                checked={terms}
+                onChange={(e) => setTerms(e.target.checked)}
+              />
+              <span>Aceitar termos de uso</span>
+              <button href="/Terms" target="_blank" onClick={handleButtonClickTerms} className={styles.buttoncenter} >leia-me</button>
             </div>
             <div className={styles.divContainercenter}>
               <button className={styles.buttoncenter} type="submit" >criar conta</button>

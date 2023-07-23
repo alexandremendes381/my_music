@@ -1,0 +1,31 @@
+
+.p {
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.button {
+    position: fixed;
+    top: 8px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+    margin-left: 10px;
+    display: inline-flex;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    color: red;
+    background-color: black;
+
+    &:hover {
+        background-color: darkred;
+    }
+}
