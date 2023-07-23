@@ -4,8 +4,8 @@ import ReactModal from 'react-modal'
 import axios from 'axios';
 import { UserContext } from '../../hooks/userContext/userContext';
 import styles from './index.module.scss'
-import Input from '../../components/Input/Input';
 import { toastSuccess } from '../../utils/ToastInfo';
+import InputNew from '../../components/InputNew/InputNew';
 
 function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, handleUpdateData }) {
   const { userData } = useContext(UserContext);
@@ -64,6 +64,24 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
     await handleSaveChanges(e);
   };
 
+
+  function formatDate(dateString) {
+    // Valida se a data está no formato esperado "yyyy-MM-dd"
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateRegex.test(dateString)) {
+      // Se não estiver no formato correto, retorna uma data padrão ou uma string vazia, como preferir
+      return ""; // ou poderia ser "0000-00-00" ou outra data padrão
+    }
+
+    // Converte o valor em milissegundos para uma data
+    const dateObj = new Date(dateString);
+    const year = dateObj.getFullYear();
+    const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+    const day = String(dateObj.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }
+
+
   return (
     <ReactModal
       isOpen={isOpenModal}
@@ -73,10 +91,10 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
       contentLabel="Manage Account Modal"
     >
       <div className={styles.modalContent}>
-        <h2>Manage Account</h2>
+        <h2>Minha Conta</h2>
         <div>
           <label htmlFor="name">Name:</label>
-          <Input
+          <InputNew
             type="text"
             id="name"
             value={name}
@@ -85,7 +103,7 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
         </div>
         <div>
           <label htmlFor="email">Email:</label>
-          <Input
+          <InputNew
             type="email"
             id="email"
             value={email}
@@ -93,8 +111,8 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
           />
         </div>
         <div>
-          <label htmlFor="telephone">Telephone:</label>
-          <Input
+          <label htmlFor="telephone">Telefone:</label>
+          <InputNew
             type="text"
             id="telephone"
             value={telephone}
@@ -103,7 +121,7 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
         </div>
         <div>
           <label htmlFor="cep">CEP:</label>
-          <Input
+          <InputNew
             type="text"
             id="cep"
             value={cep}
@@ -111,8 +129,8 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
           />
         </div>
         <div>
-          <label htmlFor="city">City:</label>
-          <Input
+          <label htmlFor="city">Cidade:</label>
+          <InputNew
             type="text"
             id="city"
             value={city}
@@ -120,17 +138,21 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
           />
         </div>
         <div>
-          <label htmlFor="birthdate">Birthdate:</label>
-          <Input
-            type="text"
-            id="birthdate"
-            value={birthdate}
-            onChange={e => setBirthdate(e.target.value)}
-          />
+          <label htmlFor="birthdate">Data de Nascimento:</label>
+          <InputNew
+  type="date"
+  min="0000-01-01"
+  max="9999-12-31"
+  id="birthdate"
+  value={formatDate(birthdate)}
+  onChange={(e) => setBirthdate(e.target.value)}
+  disabled // Adiciona o atributo disabled para desativar o campo
+/>
+
         </div>
         <div>
           <label htmlFor="uf">UF:</label>
-          <Input
+          <InputNew
             type="text"
             id="uf"
             value={uf}
@@ -139,15 +161,15 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
         </div>
         <div>
           <label htmlFor="bairro">Bairro:</label>
-          <Input
+          <InputNew
             type="text"
             id="bairro"
             value={bairro}
             onChange={e => setBairro(e.target.value)}
           />
         </div>
-        <Button className="w-100" onClick={handleCombinedAction}>Save</Button>
-        <Button onClick={handleToggleModalClose}>Logout</Button>
+        <Button className="w-100" onClick={handleCombinedAction}>Salvar</Button>
+        <Button onClick={handleToggleModalClose}>Fechar</Button>
       </div>
     </ReactModal>
   )

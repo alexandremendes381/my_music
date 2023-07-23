@@ -10,13 +10,14 @@ function ScreenLogin() {
     email,
     password,
     handleButtonClickPassword,
+
   } = UseNewLoguin()
 
   return (
     <div className={styles.container}>
       <div className='mt-3'>
         <div className={styles.divnew}>
-         <h1>Sign Up</h1> 
+         <h1>Login</h1> 
         </div>
         
         <div>
@@ -45,15 +46,6 @@ function ScreenLogin() {
             />
           </div>
         </div>
-        <div>
-          <input
-          type="checkbox"
-          >
-          
-          </input>
-          <span>accept terms of use</span> 
-        </div>
-
         <div className={styles.buttonsContainer}>
           <div >
             <button onClick={handleButtonClickLogin} className={styles.loginButton}>
@@ -62,11 +54,11 @@ function ScreenLogin() {
           </div>
           <div style={{ flex: 1 }}>
             <button onClick={handleButtonClickPassword}>
-            Forgot your password?
+            Esqueceu a senha?
             </button>
           </div>
           <div style={{ flex: 1 }}>
-            <button onClick={handleButtonClick}>new account?</button>
+            <button onClick={handleButtonClick}>Nova Conta?</button>
           </div>
         </div>
 

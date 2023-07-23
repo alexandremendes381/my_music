@@ -15,11 +15,18 @@ function UseNewCadastro() {
   const [bairro, setBairro] = useState('');
   const [uf, setUf] = useState('');
   const [country, setCountry] = useState('');
+  const [terms, setTerms] = useState(false)
   const [selfie, setSelfie] = useState(null); // Estado para armazenar o arquivo da selfie
-  const Login = useNavigate();
+  const navigate = useNavigate();
+
+  const handleButtonClickTerms = () => {
+    const url = "http://localhost:3000/Terms";
+    const newTab = window.open(url, "_blank");
+    newTab.focus();
+  };
 
   const handleButtonClickHome = () => {
-    Login('/');
+    navigate('/');
   };
 
   const handleButtonClickCep = async (e) => {
@@ -71,6 +78,7 @@ function UseNewCadastro() {
         birthdate,
         country,
         selfie,
+        terms
       });
 
       const telephoneWithoutMask = telephone.replace(/\D/g, '');
@@ -87,6 +95,7 @@ function UseNewCadastro() {
       formData.append('bairro', bairro);
       formData.append('uf', uf);
       formData.append('country', country);
+      formData.append('terms', terms);
 
       if (selfie.startsWith('data:image')) {
         // If the selfie is a data URI (Base64-encoded image), convert it to a Blob
@@ -163,21 +172,26 @@ function UseNewCadastro() {
     password,
     setSelfie,
     selfie,
-    handleFileChange
+    handleFileChange,
+    handleButtonClickTerms,
+    setTerms,
+    terms
   };
 }
 
 const schema = yup.object().shape({
   email: yup.string().email('E-mail inválido').required('E-mail é obrigatório'),
   password: yup.string().required('Senha é obrigatória'),
-  name: yup.string().required('E-mail é obrigatório'),
+  name: yup.string().required('Nome é obrigatório'),
   telephone: yup.string().nullable().required('Telefone é obrigatório'),
   cep: yup.string().nullable().required('Cep é obrigatório'),
-  birthdate: yup.string().nullable().required('Cep é obrigatório'),
-  city: yup.string().nullable().required('Data é obrigatório'),
+  birthdate: yup.string().nullable().required('Data de Nascimento é obrigatório'),
+  city: yup.string().nullable().required('Cidade é obrigatório'),
   bairro: yup.string().nullable().required('Bairro é obrigatório'),
   uf: yup.string().nullable().required('Uf é obrigatório'),
   country: yup.string().nullable().required('Pais é obrigatório'),
+  selfie: yup.string().nullable().required('selfie é obrigatório'),
+  terms: yup.bool().oneOf([true]).required('O Termo é obrigatório'),
 });
 
 export default UseNewCadastro;

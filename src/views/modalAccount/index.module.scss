@@ -6,7 +6,7 @@
     position: relative;
     width: 100%;
     background-color: transparent;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(182px)
   }
   
   .divContainer {
@@ -87,3 +87,55 @@
     max-height: 80vh; /* Define a altura máxima do conteúdo do modal */
   }
   
+  .containerimg {
+    float: right;
+    margin-top: 30px;
+    left: -25px;
+    max-width: 330px;
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+  
+    .imagem {
+      width: 50px;
+      height: 50px;
+      position: relative;
+      align-items: center;
+    }
+  }
+  
+  .imagemPlaceholder {
+    width: 60px;
+    height: 60px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    margin-top: 50px;
+    left: -122px;
+    position: relative;
+  
+    // Defina um tamanho adequado para o ícone
+    font-size: 20px;
+    // Centralize o ícone verticalmente no quadrado
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    // Crie o ícone usando FontAwesome (classe do ícone de câmera)
+    &::before {
+      content: "\f030"; // Código Unicode do ícone de câmera no FontAwesome
+      font-family: "Font Awesome 5 Free"; // Ajuste a fonte correta para o ícone
+      font-weight: 900;
+    }
+  
+    // Defina o tamanho da imagem de fundo do quadrado
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .inputimg {
+    display: none;
+  }

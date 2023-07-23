@@ -13,6 +13,7 @@ import ScreenBlog from './views/screenBlog';
 import ScreenMenuProducts from './views/screenMenuProducts';
 import { UserProvider } from './hooks/userContext/userContext';
 import ScreenRareImages from './views/screenRareimages';
+import ScreenTerms from './views/screenTerms';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -27,6 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/newPassword" element={<ScreenNewPassword />} />
           <Route path="/MenuPrincipal" element={<ScreenMenuProducts />} />
           <Route path="/Menu" element={<ScreenMenu />} />
+          <Route path="/Terms" element={<ScreenTerms />} />
           <Route path="/ScreenBlog" element={<ScreenBlog />} />
         </Routes>
       </BrowserRouter>

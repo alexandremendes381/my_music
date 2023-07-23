@@ -1,0 +1,41 @@
+.inputContainer {
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 4px;
+  
+    label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      transition: 0.3s;
+      color: white;
+      opacity: 0.5;
+    }
+  
+    input {
+      width: 90%;
+      padding: 10px;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid white;
+      color: #000;
+  
+      &:focus {
+        outline: none;
+      }
+  
+      &::placeholder {
+        color: white;
+        opacity: 0.5;
+      }
+  
+      &:focus ~ label,
+      &:valid ~ label,
+      &:not(:placeholder-shown) ~ label {
+        font-size: 12px;
+        transform: translateY(-20px);
+      }
+    }
+  }
+  

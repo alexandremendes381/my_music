@@ -27,7 +27,7 @@ function ScreenPost() {
                     <h2>Supreme Songs</h2>
                 </div>
                 <div className={styles.divnew}>
-                <h3>visit my accounts
+                <h3>Visite Minhas Contas
                 </h3>
                </div> 
                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
