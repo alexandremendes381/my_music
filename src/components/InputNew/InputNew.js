@@ -2,16 +2,17 @@ import React from 'react';
 import styles from './index.module.scss';
 import InputMask from 'react-input-mask';
 
-function InputNew({ children, autoComplete, maxLength, mask, ...restProps }) {
+function InputNew({ type, mask, autoComplete, maxLength, ...restProps }) {
   return (
     <div className={styles.inputContainer}>
       {mask ? (
         <InputMask {...restProps} autoComplete={autoComplete} mask={mask} />
+      ) : type === 'date' ? (
+        <input type="date" {...restProps} autoComplete={autoComplete} />
       ) : (
-        <input {...restProps} autoComplete={autoComplete} maxLength={maxLength} />
+        <input type={type} {...restProps} autoComplete={autoComplete} maxLength={maxLength} />
       )}
     </div>
-
   );
 }
 

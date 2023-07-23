@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './index.module.scss';
 import Input from '../../components/Input/Input';
 import { useNavigate } from 'react-router-dom';
+import { toastInfo, toastSuccess } from '../../utils/ToastInfo';
 
 function ScreenNewPassword() {
   const [email, setEmail] = useState('');
@@ -55,12 +56,13 @@ function ScreenNewPassword() {
 
       if (response.ok) {
         // Redirecionar para a tela de sucesso ou exibir mensagem de sucesso
-        console.log('Senha atualizada com sucesso!');
+        toastSuccess('Senha atualizada com sucesso!');
+        handleButtonClick()
       } else {
-        setErrorMessage('Ocorreu um erro ao atualizar a senha. Por favor, tente novamente.');
+        toastInfo('Ocorreu um erro ao atualizar a senha. Por favor, tente novamente.');
       }
     } catch (error) {
-      setErrorMessage('Ocorreu um erro ao processar a solicitação. Por favor, tente novamente mais tarde.');
+      toastInfo('Ocorreu um erro ao processar a solicitação. Por favor, tente novamente mais tarde.');
     }
   };
 

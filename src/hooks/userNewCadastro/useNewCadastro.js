@@ -190,6 +190,7 @@ const schema = yup.object().shape({
   bairro: yup.string().nullable().required('Bairro é obrigatório'),
   uf: yup.string().nullable().required('Uf é obrigatório'),
   country: yup.string().nullable().required('Pais é obrigatório'),
+  selfie: yup.string().nullable().required('selfie é obrigatório'),
   terms: yup.bool().oneOf([true]).required('O Termo é obrigatório'),
 });
 

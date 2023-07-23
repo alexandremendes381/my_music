@@ -4,7 +4,6 @@ import ReactModal from 'react-modal'
 import axios from 'axios';
 import { UserContext } from '../../hooks/userContext/userContext';
 import styles from './index.module.scss'
-import Input from '../../components/Input/Input';
 import { toastSuccess } from '../../utils/ToastInfo';
 import InputNew from '../../components/InputNew/InputNew';
 
@@ -65,6 +64,24 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
     await handleSaveChanges(e);
   };
 
+
+  function formatDate(dateString) {
+    // Valida se a data está no formato esperado "yyyy-MM-dd"
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateRegex.test(dateString)) {
+      // Se não estiver no formato correto, retorna uma data padrão ou uma string vazia, como preferir
+      return ""; // ou poderia ser "0000-00-00" ou outra data padrão
+    }
+
+    // Converte o valor em milissegundos para uma data
+    const dateObj = new Date(dateString);
+    const year = dateObj.getFullYear();
+    const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+    const day = String(dateObj.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }
+
+
   return (
     <ReactModal
       isOpen={isOpenModal}
@@ -123,13 +140,15 @@ function ModalAccount({ isOpenModal, handleToggleModal, handleToggleModalClose, 
         <div>
           <label htmlFor="birthdate">Data de Nascimento:</label>
           <InputNew
-            type="date"
-            min="0000-01-01"
-            max="9999-12-31"
-            id="birthdate"
-            value={birthdate}
-            onChange={e => setBirthdate(e.target.value)}
-          />
+  type="date"
+  min="0000-01-01"
+  max="9999-12-31"
+  id="birthdate"
+  value={formatDate(birthdate)}
+  onChange={(e) => setBirthdate(e.target.value)}
+  disabled // Adiciona o atributo disabled para desativar o campo
+/>
+
         </div>
         <div>
           <label htmlFor="uf">UF:</label>
