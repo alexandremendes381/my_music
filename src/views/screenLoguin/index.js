@@ -10,7 +10,7 @@ function ScreenLogin() {
     email,
     password,
     handleButtonClickPassword,
-
+    handleButtonClickLoginAccoout
   } = UseNewLoguin()
 
   return (
@@ -50,6 +50,11 @@ function ScreenLogin() {
           <div >
             <button onClick={handleButtonClickLogin} className={styles.loginButton}>
               Login
+            </button>
+          </div>
+          <div >
+            <button onClick={handleButtonClickLoginAccoout} className={styles.loginButton}>
+              Login sem conta 
             </button>
           </div>
           <div style={{ flex: 1 }}>

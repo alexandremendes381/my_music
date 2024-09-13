@@ -55,6 +55,10 @@ function UseNewLogin() {
     }
   };
 
+  const handleButtonClickLoginAccoout = async () => {
+    handleButtonClickHome();
+  };
+
   const handleUpdateData = async (e) => {
     e.preventDefault();
   
@@ -74,8 +78,6 @@ function UseNewLogin() {
     }
   };
   
-  
-  
 
   return {
     handleButtonClick,
@@ -88,6 +90,7 @@ function UseNewLogin() {
     handleButtonClickPassword,
     handleButtonClickBlog,
     handleUpdateData,
+    handleButtonClickLoginAccoout
   };
 }
 
